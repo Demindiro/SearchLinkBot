@@ -2,7 +2,7 @@
 
 from config import *
 from praw import Reddit
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, quote
 
 
 
@@ -28,7 +28,7 @@ def gen_link_google(string):
 
 
 def gen_link_ducks(string):
-    return f'[DuckDuckGo](https://www.duckduckgo.com/{string})'
+    return f'[DuckDuckGo](https://www.duckduckgo.com/?q={quote_plus(string)})'
 
 
 gen_link_functions = (
